@@ -33,7 +33,7 @@ class CarInterface(CarInterfaceBase):
       ret.safetyModel = car.CarParams.SafetyModel.volkswagen
 
       # Additional common MQB parameters that may be overridden per-vehicle
-      ret.steerRateCost = 1
+      ret.steerRateCost = 1.
       ret.steerActuatorDelay = 0.1 # Hopefully all MQB racks are similar here
       ret.steerLimitTimer = 0.4
 
@@ -52,14 +52,14 @@ class CarInterface(CarInterfaceBase):
       # averaged params should work reasonably on a range of cars. Owners
       # can tweak here, as needed, until we have car type auto-detection.
 
-      ret.mass = 1700 + STD_CARGO_KG
+      ret.mass = 1400 + STD_CARGO_KG
       ret.wheelbase = 2.64
       ret.centerToFront = ret.wheelbase * 0.45
       ret.steerRatio = 15.6
       ret.lateralTuning.pid.kf = 0.00006
       ret.lateralTuning.pid.kpV = [0.6]
-      ret.lateralTuning.pid.kiV = [0.02]
-      tire_stiffness_factor = 1
+      ret.lateralTuning.pid.kiV = [0.2]
+      tire_stiffness_factor = 1.
 
     ret.enableCamera = True # Stock camera detection doesn't apply to VW
     ret.transmissionType = car.CarParams.TransmissionType.automatic
