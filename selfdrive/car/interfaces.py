@@ -109,6 +109,7 @@ class CarInterfaceBase():
        (cs_out.brakePressed and (not self.CS.out.brakePressed or not cs_out.standstill)):
       events.append(create_event('pedalPressed', [ET.NO_ENTRY, ET.USER_DISABLE]))
 
+
     # we engage when pcm is active (rising edge)
     if pcm_enable:
       if cs_out.cruiseState.enabled and not self.CS.out.cruiseState.enabled:
